@@ -24,6 +24,8 @@ function onResize() {
   }
 }
 
+onResize();
+
 window.addEventListener("resize", onResize);
 
 const shapes = ["I", "J", "L", "O", "S", "T", "Z"];
@@ -323,6 +325,11 @@ function clearCompletedRows(staticBlocksTable, addPoints) {
   while (completedRows-- > 0) {
     staticBlocksTable.unshift(Array(staticBlocksTable[0].length).fill(0));
   }
+
+  // console.log("Po usunięciu wiersza:");
+  // console.table(gameTable);
+  // console.log("_______");
+  // console.table(staticBlocksTable);
 }
 
 function getNextRotation(shape, currentRotationIndex) {
@@ -400,6 +407,7 @@ class Tetromino {
     for (let i = 0; i < newShape.length; i++) {
       for (let j = 0; j < newShape[i].length; j++) {
         if (newShape[i][j] !== 0) {
+          // check if the block goes out of bounds after rotation
           if (
             this.x + j < 0 ||
             this.x + j >= gameTable[0].length ||
@@ -408,6 +416,7 @@ class Tetromino {
           ) {
             return;
           }
+          // check if the block overlaps with a static block after rotation
           if (staticBlocksTable[this.y + i][this.x + j] !== 0) {
             return;
           }
@@ -482,6 +491,7 @@ class Tetromino {
         }
       }
       addShapeToBoard(shape, gameTable, shape.x, shape.y);
+      // console.table(gameTable);
       displayBoard(gameTable);
       return;
     }
@@ -556,6 +566,7 @@ function startGame() {
   }, 300);
 }
 
+// Add event listeners for arrow keys
 document.addEventListener("keydown", (event) => {
   if (shape !== undefined) {
     switch (event.keyCode) {
