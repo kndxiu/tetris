@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.3/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Tetris</title>
+  </head>
+  <body id="body">
+    <div id="start-screen">
+      <span>Tetris</span>
+      <button id="start-button">start</button>
+    </div>
+    <div id="container" class="container">
+      <div class="blocks">
+        <div style="width: 100%">
+          <span>Score</span>
+          <div id="score" class="value">0</div>
+        </div>
+        <div style="width: 100%">
+          <span>Lines</span>
+          <div id="lines" class="value">0</div>
+        </div>
+        <div style="width: 100%">
+          <span>Level</span>
+          <div id="level" class="value">1</div>
+        </div>
+      </div>
+      <div class="frame main-block"></div>
+      <div class="buttons">
+        <div class="left">
+          <iconify-icon
+            icon="material-symbols:chevron-left-rounded"
+          ></iconify-icon>
+        </div>
+        <div class="down">
+          <iconify-icon icon="majesticons:chevron-down-line"></iconify-icon>
+        </div>
+        <div class="right">
+          <iconify-icon
+            icon="material-symbols:chevron-right-rounded"
+          ></iconify-icon>
+        </div>
+        <div class="rotate">
+          <iconify-icon icon="mdi:reload"></iconify-icon>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

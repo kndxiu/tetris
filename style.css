@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #262a38;
+  --text-color: #dfe5f8;
+  --border-color: #3b4261;
+  --border-radius: 12px;
+  --gap: 0.5rem;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  width: 100%;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+  padding: 0;
+  margin: 0;
+}
+
+#start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--gap);
+  background-color: white;
+  z-index: 1;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.25s;
+}
+
+#start-screen span {
+  font-size: 48px;
+}
+
+#start-button {
+  width: calc(100% - 32px);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color);
+  max-width: 200px;
+  padding: 1rem;
+  text-transform: uppercase;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  gap: var(--gap);
+  position: relative;
+  flex-direction: column;
+}
+
+.frame {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  grid-template-rows: repeat(20, 30px);
+  gap: 2px;
+  padding: var(--gap);
+}
+
+.main-block,
+.side-block {
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  border-top: 3px solid var(--border-color);
+  border-left: 3px solid var(--border-color);
+}
+
+.side-block {
+  padding: var(--gap);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 200px;
+}
+
+#hold {
+  height: 110px;
+}
+
+#next {
+  height: 280px;
+}
+
+.blocks {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gap);
+  align-items: center;
+  color: var(--text-color);
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color);
+  padding: var(--gap);
+}
+
+.block {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 30px);
+  grid-template-rows: repeat(2, 30px);
+  grid-gap: 4px;
+}
+
+.cube {
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.value {
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: var(--gap);
+}
+
+.left,
+.right,
+.down,
+.rotate {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #262a38;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+.left {
+  background-color: #215bd6;
+}
+
+.down {
+  background-color: #eed442;
+}
+
+.right {
+  background-color: #f036ff;
+}
+
+.rotate {
+  background-color: #4cdef8;
+}
